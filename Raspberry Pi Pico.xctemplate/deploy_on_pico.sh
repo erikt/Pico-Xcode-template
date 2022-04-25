@@ -1,17 +1,24 @@
 #!/bin/sh
 
-PROJECT_NAME=___PRODUCT_NAME___
-BUILD_DIR=/Users/erik/Developer/pico/$PROJECT_NAME/build
-PICOTOOL=/usr/local/bin/picotool
-RP2040_VOLUME=/Volumes/RPI-RP2
+PROJECT_NAME=___PROJECT_NAME___
+BUILD_DIR=___PROJECT_DIR___/build
+PICOTOOL=___VARIABLE_picotoolPath___
+RP2040_VOLUME=/Volumes/___VARIABLE_picoUSBVolumeName___
 
+# Reboot the pico as a USB mass storage device.
 $PICOTOOL reboot -f -u
 
+# Wait until the pico has rebooted and the volume has been mounted.
 until [ -d $RP2040_VOLUME ]
 do
-     sleep 1
+     sleep 0.5
 done
 
+# Load the built binary in the pico.
 $PICOTOOL load $BUILD_DIR/$PROJECT_NAME.uf2
+
+# Unmount the pico USB mass storage device volume from macOS.
 diskutil unmountDisk $RP2040_VOLUME
+
+# Reboot the pico (and run the new code ... )
 $PICOTOOL reboot
