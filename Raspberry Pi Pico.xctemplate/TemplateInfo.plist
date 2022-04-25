@@ -5,14 +5,22 @@
 	<!-- =============================================================== -->
 	<!-- GENERAL                                                         -->
 	<!-- =============================================================== -->
+	
+	<!-- Describes what kind of Xcode template. Required. --->
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	
+	<!-- Unique template identifier. Required for project templates. -->
 	<key>Identifier</key>
 	<string>net.tjernlund.raspberryPiPicoBuild</string>
+
+	<!-- Which, if any, templates to inherit from. -->
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.base</string>
 	</array>
+	
+	<!-- -->
 	<key>Concrete</key>
 	<true/>
 	<key>Description</key>
@@ -58,6 +66,13 @@
 			<key>PathType</key>
 			<string>Project</string>
 		</dict>
+		<key>../deploy_on_pico.sh</key>
+		<dict>
+			<key>Path</key>
+			<string>deploy_on_pico.sh</string>
+			<key>PathType</key>
+			<string>Project</string>
+		</dict>
 	</dict>
  	<!-- DEFINITIONS end -->
 
@@ -70,6 +85,7 @@
 		<string>../build</string>
 		<string>../pico_sdk_import.cmake</string>
 		<string>../main.cc</string>
+		<string>../deploy_on_pico.sh</string>
 	</array>
 	<!-- NODES end -->
 
@@ -132,6 +148,7 @@
 			<true/>
 		</dict>
 		<!-- USB or UART stdio for the Pico. -->
+		<!-- 
 		<dict>
 			<key>Identifier</key>
 			<string>picoEnableSTDIOUSB</string>
@@ -146,6 +163,7 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
+		-->
 		<!-- Volume name for the mounted USB disk volume of the Pico. -->
 		<dict>
 			<key>Identifier</key>

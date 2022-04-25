@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Name of executable.
-set(NAME ___PROJECT_NAME___)
+set(NAME ___PROJECTNAME___)
 
 #include(pimoroni_pico_import.cmake)
 include(pico_sdk_import.cmake)

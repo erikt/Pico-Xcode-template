@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PROJECT_NAME=___PROJECT_NAME___
-BUILD_DIR=___PROJECT_DIR___/build
+PROJECT_NAME=___PROJECTNAME___
+BUILD_DIR=___PROJECTDIR___/build
 PICOTOOL=___VARIABLE_picotoolPath___
 RP2040_VOLUME=/Volumes/___VARIABLE_picoUSBVolumeName___
 
