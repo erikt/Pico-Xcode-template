@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- =============================================================== -->
+	<!-- GENERAL                                                         -->
+	<!-- =============================================================== -->
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>net.tjernlund.raspberryPiPicoBuild</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.base</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template creates a Raspberry Pi Pico CMake based project.</string>
+	<key>NameOfInitialFileForEditor</key>
+	<string>main.cc</string>
+	<key>Icon</key>
+	<string>TemplateIcon</string>
+	<key>ProjectOnly</key>
+	<true/>
+	<!-- GENERAL end -->
+
+	<!-- =============================================================== -->
+	<!-- DEFINITIONS                                                     -->
+	<!-- =============================================================== -->
+	<key>Definitions</key>
+	<dict>
+		<key>../build</key>
+		<dict>
+			<key>Path</key>
+			<string>build</string>
+			<key>PathType</key>
+			<string>Project</string>
+		</dict>
+		<key>../CMakeLists.txt</key>
+		<dict>
+			<key>Path</key>
+			<string>CMakeLists.txt</string>
+			<key>PathType</key>
+			<string>Project</string>
+		</dict>
+		<key>../pico_sdk_import.cmake</key>
+		<dict>
+			<key>Path</key>
+			<string>pico_sdk_import.cmake</string>
+			<key>PathType</key>
+			<string>Project</string>
+		</dict>
+		<key>../main.cc</key>
+		<dict>
+			<key>Path</key>
+			<string>main.cc</string>
+			<key>PathType</key>
+			<string>Project</string>
+		</dict>
+	</dict>
+ 	<!-- DEFINITIONS end -->
+
+ 	<!-- =============================================================== -->
+	<!-- NODES                                                           -->
+	<!-- =============================================================== -->
+	<key>Nodes</key>
+	<array>
+		<string>../CMakeLists.txt</string>
+		<string>../build</string>
+		<string>../pico_sdk_import.cmake</string>
+		<string>../main.cc</string>
+	</array>
+	<!-- NODES end -->
+
+ 	<!-- =============================================================== -->
+	<!-- OPTIONS                                                         -->
+	<!-- =============================================================== -->
+	<key>Options</key>
+	<array>
+		<!-- Path to the Raspberry Pi Pico SDK. 
+			 This should be placed on the same directory level as 
+			 our own project's directory. -->
+		<dict>
+			<key>Identifier</key>
+			<string>picoSDKPath</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Raspberry Pi Pico SDK path:</string>
+			<key>Description</key>
+			<string>The path to the Raspberry Pi Pico SDK</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>/Users/___USERNAME___/Developer/pico/pico-sdk</string>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<!-- Path to build tool executable (cmake) -->
+		<dict>
+			<key>Identifier</key>
+			<string>buildToolPath</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Build Tool:</string>
+			<key>Description</key>
+			<string>The path to the build tool to use</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>/opt/homebrew/bin/cmake</string>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<!-- Name of project cmake build directory. -->
+		<dict>
+			<key>Identifier</key>
+			<string>projectBuildDir</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Project build directory:</string>
+			<key>Description</key>
+			<string>Name of cmake build directory</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>build</string>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<!-- USB or UART stdio for the Pico. -->
+		<dict>
+			<key>Identifier</key>
+			<string>picoEnableSTDIOUSB</string>
+			<key>Name</key>
+			<string>Enable Pico USB output</string>
+			<key>Description</key>
+			<string>Enable the Raspberry Pi Pico STDIO USB output</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<true/>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<!-- Volume name for the mounted USB disk volume of the Pico. -->
+		<dict>
+			<key>Identifier</key>
+			<string>picoUSBVolumeName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Pico USB volume name:</string>
+			<key>Description</key>
+			<string>Volume name for Raspberry Pi Pico</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>RPI-RP2</string>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<!-- Path to picotool. -->
+		<dict>
+			<key>Identifier</key>
+			<string>picotoolPath</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>picotool path:</string>
+			<key>Description</key>
+			<string>The path to picotool</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>/usr/local/bin/picotool</string>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+	</array>
+	<!-- OPTIONS end -->
+	
+	<!-- =============================================================== -->
+	<!-- TARGETS                                                         -->
+	<!-- =============================================================== -->
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetType</key>
+			<string>Legacy</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaLegacyTarget</string>
+			<key>BuildToolPath</key>
+			<string>___VARIABLE_buildToolPath___</string>
+			<key>BuildToolArgsString</key>
+			<string>--build $(ACTION) .</string>
+			<key>SharedSettings</key>
+			<dict>
+				<!-- Include the Pico SDK headers to the search path. -->
+				<!-- Other SDK's could be added here (Pimoroni et al ... ) -->
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>___VARIABLE_picoSDKPath___/**</string>
+				<key>OTHER_CFLAGS</key>
+				<string></string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+			</dict>
+			<key>Configurations</key>
+			<dict>
+				<key>Debug</key>
+				<dict>
+					<key>DEBUGGING_SYMBOLS</key>
+					<string>YES</string>
+					<key>GCC_GENERATE_DEBUGGING_SYMBOLS</key>
+					<string>YES</string>
+					<key>GCC_OPTIMIZATION_LEVEL</key>
+					<string>0</string>
+					<key>DEBUG_INFORMATION_FORMAT</key>
+					<string>dwarf</string>
+				</dict>
+				<key>Release</key>
+				<dict>
+					<key>DEBUG_INFORMATION_FORMAT</key>
+					<string>dwarf-with-dsym</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+            <key>ProductType</key>
+            <string>com.apple.product-type.tool</string>
+            <key>TargetIdentifier</key>
+            <string>com.apple.dt.commandLineToolTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<!-- Include the Pico SDK headers to the search path. -->
+				<!-- Other SDK's could be added here (Pimoroni et al ... ) -->
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>___VARIABLE_picoSDKPath___/**</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<string>$(SRCROOT)/___VARIABLE_projectBuildDir___/**</string>
+				<key>OTHER_CFLAGS</key>
+				<string></string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+			</dict>
+            <key>BuildPhases</key>
+            <array>
+                <dict>
+                    <key>Class</key>
+                    <string>Sources</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>Frameworks</string>
+                </dict>
+                <dict>
+                    <key>Class</key>
+                    <string>CopyFiles</string>
+                    <key>DstPath</key>
+                    <string>/usr/share/man/man1/</string>
+                    <key>DstSubfolderSpec</key>
+                    <string>0</string>
+                    <key>RunOnlyForDeploymentPostprocessing</key>
+                    <string>YES</string>
+                </dict>
+            </array>
+        </dict>
+	</array>
+	<!-- TARGETS end -->
+
+</dict>
+</plist>
