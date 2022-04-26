@@ -46,13 +46,6 @@
 	<!-- =============================================================== -->
 	<key>Definitions</key>
 	<dict>
-		<key>../build</key>
-		<dict>
-			<key>Path</key>
-			<string>build</string>
-			<key>PathType</key>
-			<string>Project</string>
-		</dict>
 		<key>../CMakeLists.txt</key>
 		<dict>
 			<key>Path</key>
@@ -90,7 +83,6 @@
 	<key>Nodes</key>
 	<array>
 		<string>../CMakeLists.txt</string>
-		<string>../build</string>
 		<string>../pico_sdk_import.cmake</string>
 		<string>../main.cc</string>
 		<string>../deploy_on_pico.sh</string>
@@ -117,7 +109,7 @@
 			<key>Type</key>
 			<string>text</string>
 			<key>Default</key>
-			<string>/Users/___USERNAME___/Developer/pico/pico-sdk</string>
+			<string>##PICO_SDK_PATH##</string>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
@@ -134,11 +126,12 @@
 			<key>Type</key>
 			<string>text</string>
 			<key>Default</key>
-			<string>/opt/homebrew/bin/cmake</string>
+			<string>##CMAKE_PATH##</string>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
 		<!-- Name of project cmake build directory. -->
+		<!-- 
 		<dict>
 			<key>Identifier</key>
 			<string>projectBuildDir</string>
@@ -147,14 +140,15 @@
 			<key>Name</key>
 			<string>Project build directory:</string>
 			<key>Description</key>
-			<string>Name of cmake build directory</string>
+			<string>Path to cmake build directory</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>Default</key>
-			<string>${PROJECT_DIR}/build</string>
+			<string>##PICO_PROJECT_BUILD_PATH##</string>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
+		-->
 		<!-- USB or UART stdio for the Pico. -->
 		<!-- 
 		<dict>
@@ -231,7 +225,7 @@
 				<key>HEADER_SEARCH_PATHS</key>
 				<string>___VARIABLE_picoSDKPath___/**</string>
 				<key>LIBRARY_SEARCH_PATHS</key>
-				<string>$(SRCROOT)/___VARIABLE_projectBuildDir___/**</string>
+				<string>$(SRCROOT)/build/**</string>
 				<key>OTHER_CFLAGS</key>
 				<string></string>
 				<key>OTHER_LDFLAGS</key>
@@ -276,7 +270,7 @@
 				<key>HEADER_SEARCH_PATHS</key>
 				<string>___VARIABLE_picoSDKPath___/**</string>
 				<key>LIBRARY_SEARCH_PATHS</key>
-				<string>$(SRCROOT)/___VARIABLE_projectBuildDir___/**</string>
+				<string>$(SRCROOT)/build/**</string>
 				<key>OTHER_CFLAGS</key>
 				<string></string>
 				<key>OTHER_LDFLAGS</key>

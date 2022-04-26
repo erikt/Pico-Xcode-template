@@ -2,8 +2,13 @@
 
 PROJECT_NAME=___PROJECTNAME___
 BUILD_DIR=/build
-PICOTOOL=___VARIABLE_picotoolPath___
-RP2040_VOLUME=/Volumes/___VARIABLE_picoUSBVolumeName___
+PICOTOOL=`which picotool`
+RP2040_VOLUME=/Volumes/RPI-RP2
+
+if [[ -z "${PICOTOOL}" ]]; then
+	echo "Error: picotool not found."
+	exit 1
+fi
 
 # Reboot the pico as a USB mass storage device.
 $PICOTOOL reboot -f -u
