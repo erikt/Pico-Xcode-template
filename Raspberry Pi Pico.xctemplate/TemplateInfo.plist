@@ -275,6 +275,8 @@
 				<!-- Other SDK's could be added here (Pimoroni et al ... ) -->
 				<key>HEADER_SEARCH_PATHS</key>
 				<string>___VARIABLE_picoSDKPath___/**</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<string>$(SRCROOT)/___VARIABLE_projectBuildDir___/**</string>
 				<key>OTHER_CFLAGS</key>
 				<string></string>
 				<key>OTHER_LDFLAGS</key>
