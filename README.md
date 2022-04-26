@@ -58,11 +58,11 @@ I want:
 ```
 
 ## Usage
-Ideally, using the template would just involve creating a new Xcode project. At the moment, a few manual steps are also required.
+Ideally, using the template would just involve creating a new Xcode project. At the moment, a few additional manual steps are also required.
 
 1. Create a new project in Xcode (⇧ + ⌘ + N).
 
-2. Pick the Raspberry Pi Pico project from the `other` tab if the template was copied like the installation instructions suggests.<br>
+2. Pick the Raspberry Pi Pico project from the `other` tab.<br>
 <img src="doc/xcode-template-picker.png" width="400">
 
 3. Name the project.<br>
@@ -72,7 +72,7 @@ Ideally, using the template would just involve creating a new Xcode project. At 
 
 5. We now need to do create the build directory and let CMake generate the initial Makefile:
 ```
-    cd `dirname $PICO_SDK_PATH`/MyProjectName
+    cd `dirname $PICO_SDK_PATH`/MyPicoProject
     mkdir build
     cd build
     cmake ..
