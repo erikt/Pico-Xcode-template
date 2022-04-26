@@ -20,29 +20,31 @@
 		<string>com.apple.dt.unit.base</string>
 	</array>
 	
-	<!-- -->
+	<!-- This is a concrete template, not abstract (used to inherit from only). -->
 	<key>Concrete</key>
 	<true/>
 	
-	<!-- -->
+	<!-- Xcode description text for the template. -->
 	<key>Description</key>
 	<string>This template creates a Raspberry Pi Pico CMake based project.</string>
 
-	<!-- -->
+	<!-- Which file should Xcode initially show in the editor. -->
 	<key>NameOfInitialFileForEditor</key>
 	<string>main.cc</string>
 
-	<!-- -->
+	<!-- Icon for the template used in the new project template picker. -->
 	<key>Icon</key>
 	<string>TemplateIcon</string>
 
-	<!-- -->
+	<!-- Only list template in the new project dialog, not when adding a new target. -->
 	<key>ProjectOnly</key>
 	<true/>
 	<!-- GENERAL end -->
 
 	<!-- =============================================================== -->
 	<!-- DEFINITIONS                                                     -->
+	<!-- Definitions define the content of the Nodes entry with the      -->
+	<!-- same name. Normally used to indicate where a file is.           -->                                         	   
 	<!-- =============================================================== -->
 	<key>Definitions</key>
 	<dict>
@@ -78,7 +80,8 @@
  	<!-- DEFINITIONS end -->
 
  	<!-- =============================================================== -->
-	<!-- NODES                                                           -->
+	<!-- NODES                                                           -->                  
+	<!-- List all the files in the project.                              -->
 	<!-- =============================================================== -->
 	<key>Nodes</key>
 	<array>
@@ -130,25 +133,6 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
-		<!-- Name of project cmake build directory. -->
-		<!-- 
-		<dict>
-			<key>Identifier</key>
-			<string>projectBuildDir</string>
-			<key>Required</key>
-			<true/>
-			<key>Name</key>
-			<string>Project build directory:</string>
-			<key>Description</key>
-			<string>Path to cmake build directory</string>
-			<key>Type</key>
-			<string>text</string>
-			<key>Default</key>
-			<string>##PICO_PROJECT_BUILD_PATH##</string>
-			<key>NotPersisted</key>
-			<true/>
-		</dict>
-		-->
 		<!-- USB or UART stdio for the Pico. -->
 		<!-- 
 		<dict>
@@ -162,44 +146,6 @@
 			<string>checkbox</string>
 			<key>Default</key>
 			<true/>
-			<key>NotPersisted</key>
-			<true/>
-		</dict>
-		-->
-		<!-- Volume name for the mounted USB disk volume of the Pico. -->
-		<!-- 
-		<dict>
-			<key>Identifier</key>
-			<string>picoUSBVolumeName</string>
-			<key>Required</key>
-			<true/>
-			<key>Name</key>
-			<string>Pico USB volume name:</string>
-			<key>Description</key>
-			<string>Volume name for Raspberry Pi Pico</string>
-			<key>Type</key>
-			<string>text</string>
-			<key>Default</key>
-			<string>RPI-RP2</string>
-			<key>NotPersisted</key>
-			<true/>
-		</dict>
-		-->
-		<!-- Path to picotool. -->
-		<!-- 
-		<dict>
-			<key>Identifier</key>
-			<string>picotoolPath</string>
-			<key>Required</key>
-			<true/>
-			<key>Name</key>
-			<string>picotool path:</string>
-			<key>Description</key>
-			<string>The path to picotool</string>
-			<key>Type</key>
-			<string>text</string>
-			<key>Default</key>
-			<string>/usr/local/bin/picotool</string>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>

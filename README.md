@@ -6,7 +6,7 @@ An Xcode template for creating new Raspberry Pi Pico projects.
 ## Introduction
 As a Apple ecosphere developer in general and macOS developer specifically, I wanted to be able to develop C/C++ code for the Raspberry Pi Pico using my favorite IDE, Xcode. The official toolchain and other options—Visual Studio Code et al—were not macOS native and therefore not appealing to me.
 
-The Xcode template structure is not a public Apple API and has many limitations of what can be done with it. The templates are controlled by a XML serialized property list (`TemplateInfo.plist`).
+The Xcode template structure is not a public Apple API and has many limitations of what can be done with it. The templates are controlled by a XML serialized property list (`TemplateInfo.plist`) and the 
 
 ## Goals
 The main goal of this work is to make the experience of developing C/C++ code for the Raspberry Pi Pico less painful on macOS.
@@ -24,6 +24,7 @@ I want:
 * The optional deploy script uses Raspberry Pi's [picotool](https://github.com/raspberrypi/picotool). `picotool` in turn, depends on `libusb-1.0`, which can be installed via Homebrew. Then `picotool` needs to be cloned, compiled and installed:
 ```
     brew install libusb
+    cd `dirname $PICO_SDK_PATH`
     git clone https://github.com/raspberrypi/picotool.git
     cd picotool
     mkdir build
@@ -43,12 +44,18 @@ I want:
 ```
 
 ## Installation
-To install the template, copy `Raspberry Pi Pico.xctemplate` directory to your Xcode template directory.
-
-    mkdir -p $HOME/Library/Developer/Xcode/Templates/Other
-    cp -R Raspberry\ Pi\ Pico.xctemplate $HOME/Library/Developer/Xcode/Templates/Other
-    
-Or just run the `install-template.sh` script.
+Make sure the `PICO_SDK_PATH` environment variable is set and then:
+```
+    cd `dirname $PICO_SDK_PATH`
+```
+Clone the Pico-Xcode-template repository:
+```
+    git clone https://github.com/erikt/Pico-Xcode-template.git
+```
+Run the install script:
+```
+    Pico-Xcode-template/install_template.sh
+```
 
 ## Usage
 

@@ -1,12 +1,15 @@
 #!/bin/sh
 
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
 TEMPLATE_DIR=$HOME/Library/Developer/Xcode/Templates/Other
 CMAKE_PATH=`which cmake`
 
 # Check that the PICO_SDK_PATH is set.
 if [[ -z "${PICO_SDK_PATH}" ]]; then 
-	echo "Error: the PICO_SDK_PATH environment variable is not set. Template not installed."
-	exit 1
+    echo "Error: the PICO_SDK_PATH environment variable is not set. Template not installed."
+    exit 1
 fi
 
 # Projects are on the same directory level as the pico sdk.
@@ -14,13 +17,13 @@ PICO_DEV_DIR=`dirname $PICO_SDK_PATH`
 
 # CMake needs to be installed.
 if [[ -z "${CMAKE_PATH}" ]]; then
-	echo "Error: cmake not found."
-	exit 1
+    echo "Error: cmake not found."
+    exit 1
 fi
 
 mkdir -p $TEMPLATE_DIR
 echo "Installing template in $TEMPLATE_DIR"
-cp -R "Raspberry Pi Pico.xctemplate" $TEMPLATE_DIR
+cp -R "$SCRIPTPATH/Raspberry Pi Pico.xctemplate" $TEMPLATE_DIR
 
 # Substitute paths in template to match user's environment.
 sed -i '' "s|##PICO_SDK_PATH##|$PICO_SDK_PATH|" $TEMPLATE_DIR/Raspberry\ Pi\ Pico.xctemplate/TemplateInfo.plist
