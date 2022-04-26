@@ -1,7 +1,6 @@
 #!/bin/sh
 
-SCRIPT=$(readlink -f "$0")
-SCRIPTPATH=$(dirname "$SCRIPT")
+BASEDIR=$(dirname "$0")
 
 TEMPLATE_DIR=$HOME/Library/Developer/Xcode/Templates/Other
 CMAKE_PATH=`which cmake`
@@ -23,7 +22,7 @@ fi
 
 mkdir -p $TEMPLATE_DIR
 echo "Installing template in $TEMPLATE_DIR"
-cp -R "$SCRIPTPATH/Raspberry Pi Pico.xctemplate" $TEMPLATE_DIR
+cp -R "$BASEDIR/Raspberry Pi Pico.xctemplate" $TEMPLATE_DIR
 
 # Substitute paths in template to match user's environment.
 sed -i '' "s|##PICO_SDK_PATH##|$PICO_SDK_PATH|" $TEMPLATE_DIR/Raspberry\ Pi\ Pico.xctemplate/TemplateInfo.plist

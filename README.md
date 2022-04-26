@@ -44,38 +44,52 @@ I want:
 ```
 
 ## Installation
-Make sure the `PICO_SDK_PATH` environment variable is set and then:
+1. Make sure the `PICO_SDK_PATH` environment variable is set and then:
 ```
     cd `dirname $PICO_SDK_PATH`
 ```
-Clone the Pico-Xcode-template repository:
+2. Clone the Pico-Xcode-template repository:
 ```
     git clone https://github.com/erikt/Pico-Xcode-template.git
 ```
-Run the install script:
+3. Run the install script:
 ```
     Pico-Xcode-template/install_template.sh
 ```
 
 ## Usage
-
-This template is developed with the perquisite directory structure (found above in the requirements section).
+Ideally, using the template would just involve creating a new Xcode project. At the moment, a few manual steps are also required.
 
 1. Create a new project in Xcode (⇧ + ⌘ + N).
-2. Pick the Raspberry Pi Pico project from the `other` tab if the template was copied like the installation instructions suggests.
-3. 
 
-move files in xcode
+2. Pick the Raspberry Pi Pico project from the `other` tab if the template was copied like the installation instructions suggests.<br>
+<img src="doc/xcode-template-picker.png" width="400">
 
-delete group
+3. Name the project.<br>
+<img src="doc/xcode-new-project.png" width="400">
 
-cd project
+4. Create the project in the same directory where the Pico SDK is.
 
-mkdir build
+5. We now need to do create the build directory and let CMake generate the initial Makefile:
+```
+    cd `dirname $PICO_SDK_PATH`/MyProjectName
+    mkdir build
+    cd build
+    cmake ..
+```
 
-cmake ..
+6. Back in Xcode:
+- Select the project in the Project Navigator
+- Select the external build target.
+- Select the Info tab. 
+- Set the build tool directory to the `build` directory in your project directory.<br>
+<img src="doc/xcode-target-build-directory.png" width="600"><br>
+<img src="doc/xcode-target-build-directory-2.png" width="600">
 
-deploy__on_pico.sh 
+7. Xcode has automatically created a group we don't need (named the same as our project). First select all the files in the Project Navigator and drag them up one level to right below the top project node. Delete the empty unneccessary group.
+<img src="doc/xcode-project-navigator.png" width="600">
+
+8. 
 
 ## Future improvements
 Here are a few things that would be great if it was possible to do in the future:
