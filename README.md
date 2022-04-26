@@ -1,4 +1,6 @@
-# Pico-Xcode-template
+![Raspberry Pi Pico project picker](/doc/xcode-template-picker.png)
+
+# Raspberry Pi Pico Xcode Template
 An Xcode template for creating new Raspberry Pi Pico projects.
 
 ## Introduction
@@ -37,6 +39,8 @@ To install the template, copy `Raspberry Pi Pico.xctemplate` directory to your X
     mkdir -p $HOME/Library/Developer/Xcode/Templates/Other
     cp -R Raspberry\ Pi\ Pico.xctemplate $HOME/Library/Developer/Xcode/Templates/Other
     
+Or just run the `install-template.sh` script.
+
 ## Usage
 
 This template is developed with the perquisite directory structure (found above in the requirements section).
