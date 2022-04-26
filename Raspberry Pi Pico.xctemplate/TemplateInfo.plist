@@ -104,7 +104,7 @@
 	<array>
 		<!-- Path to the Raspberry Pi Pico SDK. 
 			 This should be placed on the same directory level as 
-			 our own project's directory. -->
+			 our own project's directory. --> 
 		<dict>
 			<key>Identifier</key>
 			<string>picoSDKPath</string>
@@ -151,7 +151,7 @@
 			<key>Type</key>
 			<string>text</string>
 			<key>Default</key>
-			<string>build</string>
+			<string>${PROJECT_DIR}/build</string>
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
@@ -218,46 +218,7 @@
 	<!-- =============================================================== -->
 	<key>Targets</key>
 	<array>
-		<dict>
-			<key>TargetType</key>
-			<string>Legacy</string>
-			<key>TargetIdentifier</key>
-			<string>com.apple.dt.cocoaLegacyTarget</string>
-			<key>BuildToolPath</key>
-			<string>___VARIABLE_buildToolPath___</string>
-			<key>BuildToolArgsString</key>
-			<string>--build $(ACTION) .</string>
-			<key>SharedSettings</key>
-			<dict>
-				<!-- Include the Pico SDK headers to the search path. -->
-				<!-- Other SDK's could be added here (Pimoroni et al ... ) -->
-				<key>HEADER_SEARCH_PATHS</key>
-				<string>___VARIABLE_picoSDKPath___/**</string>
-				<key>OTHER_CFLAGS</key>
-				<string></string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-			</dict>
-			<key>Configurations</key>
-			<dict>
-				<key>Debug</key>
-				<dict>
-					<key>DEBUGGING_SYMBOLS</key>
-					<string>YES</string>
-					<key>GCC_GENERATE_DEBUGGING_SYMBOLS</key>
-					<string>YES</string>
-					<key>GCC_OPTIMIZATION_LEVEL</key>
-					<string>0</string>
-					<key>DEBUG_INFORMATION_FORMAT</key>
-					<string>dwarf</string>
-				</dict>
-				<key>Release</key>
-				<dict>
-					<key>DEBUG_INFORMATION_FORMAT</key>
-					<string>dwarf-with-dsym</string>
-				</dict>
-			</dict>
-		</dict>
+		<!-- -->
 		<dict>
             <key>ProductType</key>
             <string>com.apple.product-type.tool</string>
@@ -298,6 +259,47 @@
                 </dict>
             </array>
         </dict>
+		<!-- -->
+		<dict>
+			<key>TargetType</key>
+			<string>Legacy</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaLegacyTarget</string>
+			<key>BuildToolPath</key>
+			<string>___VARIABLE_buildToolPath___</string>
+			<key>BuildToolArgsString</key>
+			<string>--build $(ACTION) .</string>
+			<key>SharedSettings</key>
+			<dict>
+				<!-- Include the Pico SDK headers to the search path. -->
+				<!-- Other SDK's could be added here (Pimoroni et al ... ) -->
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>___VARIABLE_picoSDKPath___/**</string>
+				<key>OTHER_CFLAGS</key>
+				<string></string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+			</dict>
+			<key>Configurations</key>
+			<dict>
+				<key>Debug</key>
+				<dict>
+					<key>DEBUGGING_SYMBOLS</key>
+					<string>YES</string>
+					<key>GCC_GENERATE_DEBUGGING_SYMBOLS</key>
+					<string>YES</string>
+					<key>GCC_OPTIMIZATION_LEVEL</key>
+					<string>0</string>
+					<key>DEBUG_INFORMATION_FORMAT</key>
+					<string>dwarf</string>
+				</dict>
+				<key>Release</key>
+				<dict>
+					<key>DEBUG_INFORMATION_FORMAT</key>
+					<string>dwarf-with-dsym</string>
+				</dict>
+			</dict>
+		</dict>
 	</array>
 	<!-- TARGETS end -->
 
