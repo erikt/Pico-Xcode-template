@@ -6,7 +6,7 @@
 	<!-- GENERAL                                                         -->
 	<!-- =============================================================== -->
 	
-	<!-- Describes what kind of Xcode template. Required. --->
+	<!-- Describes what kind of Xcode template. Required. -->
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	
@@ -23,12 +23,20 @@
 	<!-- -->
 	<key>Concrete</key>
 	<true/>
+	
+	<!-- -->
 	<key>Description</key>
 	<string>This template creates a Raspberry Pi Pico CMake based project.</string>
+
+	<!-- -->
 	<key>NameOfInitialFileForEditor</key>
 	<string>main.cc</string>
+
+	<!-- -->
 	<key>Icon</key>
 	<string>TemplateIcon</string>
+
+	<!-- -->
 	<key>ProjectOnly</key>
 	<true/>
 	<!-- GENERAL end -->
