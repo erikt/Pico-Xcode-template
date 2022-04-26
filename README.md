@@ -78,18 +78,29 @@ Ideally, using the template would just involve creating a new Xcode project. At 
     cmake ..
 ```
 
-6. Back in Xcode:
+6. Back in Xcode, the target build directory needs to be set:
 - Select the project in the Project Navigator
 - Select the external build target.
 - Select the Info tab. 
-- Set the build tool directory to the `build` directory in your project directory.<br>
-<img src="doc/xcode-target-build-directory.png" width="600"><br>
-<img src="doc/xcode-target-build-directory-2.png" width="600">
+- Set the build tool directory to:
+```
+    ${PROJECT_DIR}/build
+```
+<img src="doc/xcode-build-dir.png" width="600"><br>
 
 7. Xcode has automatically created a group we don't need (named the same as our project). First select all the files in the Project Navigator and drag them up one level to right below the top project node. Delete the empty unneccessary group.
 <img src="doc/xcode-project-navigator.png" width="600">
 
-8. 
+8. Lastly, to be able to build, we need to fix the Xcode schemes. 
+- Go to the `Product` menu, select `Scheme` and then `Manage Schemes`.<br/>
+<img src="doc/xcode-menu-product-scheme.png" width="200"><br/>
+<img src="doc/xcode-menu-manage-schemes.png" width="250">
+- Select the only created scheme and delete it.<br/>
+<img src="doc/xcode-remove-scheme.png" width="500">
+- Add a new scheme and select the external build target (the one with the red and white bullseye icon).<br/>
+<img src="doc/xcode-add-scheme.png" width="500">
+
+9. Try building the project (⌘ + B). There should be no errors and we're done.
 
 ## Future improvements
 Here are a few things that would be great if it was possible to do in the future:
