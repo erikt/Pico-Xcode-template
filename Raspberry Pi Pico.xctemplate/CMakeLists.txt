@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Name of executable.
-set(NAME ___PROJECT	NAME___)
+set(NAME ___PROJECTNAME___)
 
 include(pico_sdk_import.cmake)
 
