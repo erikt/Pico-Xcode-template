@@ -173,6 +173,7 @@
 		</dict>
 		-->
 		<!-- Volume name for the mounted USB disk volume of the Pico. -->
+		<!-- 
 		<dict>
 			<key>Identifier</key>
 			<string>picoUSBVolumeName</string>
@@ -189,7 +190,9 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
+		-->
 		<!-- Path to picotool. -->
+		<!-- 
 		<dict>
 			<key>Identifier</key>
 			<string>picotoolPath</string>
@@ -206,6 +209,7 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
+		-->
 	</array>
 	<!-- OPTIONS end -->
 	
