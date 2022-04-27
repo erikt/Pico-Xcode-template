@@ -111,10 +111,10 @@ Ideally, using the template would just involve creating a new Xcode project. At 
 ## Deploying to the Pico hardware
 The template includes a shell script to make deploying and running on the Pico nicer in macOS. The script `deploy_on_pico.sh`: 
 
-1. Uses `picotool` to reboot a connected Pico as a USB Mass Storage device.
+1. Uses `picotool` to reboot a connected Pico into BOOTSEL mode.
 2. Uses `picotool` to load the project's `uf2` file on the device.
 3. Unmounts the Pico disk volume.
-4. Uses `picotool` to reboot the device and run the code.
+4. Uses `picotool` to reboot the device into application mode (and run the code).
  
 ## How to add a third party C++-library to the project
 
