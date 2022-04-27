@@ -102,7 +102,7 @@ Ideally, using the template would just involve creating a new Xcode project. At 
 <img src="doc/xcode-menu-manage-schemes.png" width="250">
 - Select the only created scheme and delete it.<br/>
 <img src="doc/xcode-remove-scheme.png" width="500">
-- Add a new scheme and select the external build target (the one with the red and white bullseye icon).<br/>
+- Add a new scheme and select the external build target (the one with the bullseye icon).<br/>
 <img src="doc/xcode-add-scheme.png" width="500">
 
 9. Try building the project (⌘ + B). There should be no errors and we're done.<br/>
