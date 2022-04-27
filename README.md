@@ -4,14 +4,18 @@ An Xcode template for creating new Raspberry Pi Pico projects.
 <img src="doc/xcode-template-picker.png" width="800">
 
 ## Introduction
-As a Apple ecosphere developer in general and macOS developer specifically, I wanted to be able to develop C/C++ code for the Raspberry Pi Pico using my favorite IDE, Xcode. The official toolchain and other options—Visual Studio Code et al—were not macOS native and therefore not appealing to me.
+As an Apple platform developer in general and macOS developer specifically, I wanted to be able to develop C/C++ code for the Raspberry Pi Pico using my favorite IDE, Xcode. The official toolchain and other options—Visual Studio Code et al—were not macOS native and therefore not appealing to me.
 
 The Xcode template structure is not a public Apple API. The API is a—mostly undocumented—XML serialized property list (`TemplateInfo.plist`) and there are many limitations of which Xcode project features and settings can be set in the template. This leads to a few manual steps needed to be done when creating a new project with the template (see the usage instructions).
+
+This is a work-in-progress, written by a Swift developer who vaguely remembers some of the innumerable C++ footguns and who's perplexed by how in the world CMake makes sense to anyone. Please, keep this in mind when using this project. 
+
+Feedback, improvements, PRs—everything is more than welcome.
 
 ## Goals
 The main goal of this work is to make the experience of developing C/C++ code for the Raspberry Pi Pico less painful on macOS.
 
-I want: 
+I'm a simple man—I just want: 
 * A low barrier to start a new project.
 * To be able to build C/C++ pico code in Xcode.
 * To be able to navigate C/C++ code in Xcode.
